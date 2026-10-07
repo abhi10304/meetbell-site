@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meetbell privacy policy</title>
+    <meta name="description" content="Meetbell has no servers, no accounts, no analytics and no advertising. Your calendar stays on your computer." />
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="./"><img src="img/icon.png" alt="" />Meetbell</a>
+        <nav><a href="./">Home</a><a href="./#support">Support</a></nav>
+      </header>
+
+      <main class="doc">
+        <h1>Privacy policy</h1>
+        <p class="muted"><em>Last updated: 6 October 2026</em></p>
+        <p>
+          Meetbell is a desktop app that reminds you of your meetings. It is built so that
+          <strong>nothing about you leaves your computer except what is needed to show your calendar and the weather</strong>,
+          and none of it reaches us: the app has no servers, no accounts, no analytics and no advertising.
+        </p>
+
+        <h2>What the app reads, and where it goes</h2>
+        <div class="table">
+          <table>
+            <thead>
+              <tr><th>What</th><th>Why</th><th>Where it goes</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Your calendar events (title, time, meeting link, location, organizer and attendee addresses)</td>
+                <td>To fly a reminder before each meeting, open the meeting, mark VIP meetings and write the "running late" message</td>
+                <td>Read directly from Microsoft 365 / Outlook.com, Google Calendar, a calendar (.ics) link you add, or classic Outlook on this computer, using read-only access. Kept in memory on your computer. Never sent anywhere else.</td>
+              </tr>
+              <tr>
+                <td>Sign-in tokens for Microsoft or Google (only if you connect those)</td>
+                <td>To keep reading your calendar without signing in again</td>
+                <td>Stored on your computer, encrypted by Windows (DPAPI) or the macOS Keychain. Sent only to Microsoft or Google. Removed when you sign out.</td>
+              </tr>
+              <tr>
+                <td>The city you choose for the weather (its name and map position)</td>
+                <td>To show weather and air quality in the widget</td>
+                <td>The map position (latitude and longitude) is sent to <a href="https://open-meteo.com">Open-Meteo</a>, a free weather service, from your computer. No account and nothing about you is sent.</td>
+              </tr>
+              <tr>
+                <td>Whether an app is using your microphone or camera right now, and whether a full-screen app is running (Windows)</td>
+                <td>To make reminders small and silent while you're on a call, sharing your screen or presenting</td>
+                <td>Checked on your computer only when a reminder is about to fly. Nothing is recorded or sent.</td>
+              </tr>
+              <tr>
+                <td>Your settings, frequent-flyer miles and today's meeting log</td>
+                <td>To remember your choices and show your boarding pass and landing report</td>
+                <td>Stored on your computer in the app's folder. Never sent anywhere.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          When you press <strong>Running late?</strong>, the app opens a Teams chat or an e-mail draft addressed to the
+          organizer. Nothing is sent until you press Send in that app yourself.
+        </p>
+
+        <h2>What the app does not do</h2>
+        <ul>
+          <li>It does not collect, sell or share personal information.</li>
+          <li>It does not track you, show ads, or use analytics or crash-reporting services.</li>
+          <li>It never writes to your calendar.</li>
+          <li>It does not record your screen, microphone or camera.</li>
+        </ul>
+
+        <h2>Your control</h2>
+        <ul>
+          <li>Disconnect a calendar from the app's Calendars window; its tokens are deleted (and revoked where the provider supports it).</li>
+          <li>Turn the weather off, or remove your city, in Settings › General.</li>
+          <li>Uninstalling the app removes it; your settings folder can be deleted from <code>%APPDATA%\Meetbell</code> (Windows) or <code>~/Library/Application Support/Meetbell</code> (Mac).</li>
+        </ul>
+
+        <h2>Children</h2>
+        <p>The app is a work tool and is not directed at children.</p>
+
+        <h2>Changes</h2>
+        <p>If this policy changes, the new version will be published at this address with a new date.</p>
+
+        <h2>Contact</h2>
+        <p>Questions: <a href="mailto:elyxaj@gmail.com">elyxaj@gmail.com</a></p>
+      </main>
+
+      <footer>
+        <div class="row">
+          <span>© 2026 Abhishek Johri · Made with <span class="heart">♥</span> by Abhishek Johri</span>
+          <span><a href="./">Meetbell</a></span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

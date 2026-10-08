@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meetbell approved</title>
+    <meta name="description" content="Meetbell has been approved for your organisation." />
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="./"><img src="img/icon.png" alt="" />Meetbell</a>
+        <nav><a href="./">Home</a><a href="for-it.html">For IT</a></nav>
+      </header>
+
+      <main class="doc">
+        <h1 id="title">Meetbell is approved ✈</h1>
+        <p id="text">
+          Thank you. Everyone in your organisation can now open Meetbell › Calendars › <strong>Continue with
+          Microsoft</strong> and sign in with their work account. No further approval is needed.
+        </p>
+        <p class="muted">You can close this page.</p>
+      </main>
+
+      <footer>
+        <div class="row">
+          <span>© 2026 Abhishek Johri · Made with <span class="heart">♥</span> by Abhishek Johri</span>
+          <span><a href="./">Meetbell</a></span>
+        </div>
+      </footer>
+    </div>
+    <script>
+      // Microsoft returns ?admin_consent=True on success, or ?error=… if the approval was cancelled or failed.
+      const q = new URLSearchParams(location.search);
+      if (q.get('error')) {
+        document.getElementById('title').textContent = 'Meetbell was not approved';
+        document.getElementById('text').textContent =
+          'The approval was cancelled or didn’t complete' +
+          (q.get('error_description') ? ': ' + q.get('error_description') : '.') +
+          ' You can try again with the same link, signed in as an administrator.';
+      }
+    </script>
+  </body>
+</html>

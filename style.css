@@ -101,6 +101,17 @@ h1 {
   text-decoration: none;
   box-shadow: 0 14px 40px rgba(124, 107, 255, 0.5);
 }
+.pill:hover {
+  box-shadow: 0 16px 48px rgba(124, 107, 255, 0.7);
+}
+.pill:focus-visible {
+  outline: 3px solid #b9b2ff;
+  outline-offset: 4px;
+}
+.small {
+  margin-top: 10px;
+  font-size: 14px;
+}
 .shot {
   margin: 44px auto 0;
   border-radius: 22px;

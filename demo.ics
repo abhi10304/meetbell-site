@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetbell//Demo calendar//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Meetbell demo
+BEGIN:VEVENT
+UID:meetbell-demo-hourly@abhi10304.github.io
+DTSTAMP:20261013T000000Z
+DTSTART:20261001T003000Z
+DTEND:20261001T010000Z
+RRULE:FREQ=HOURLY
+SUMMARY:Meetbell demo meeting
+DESCRIPTION:A demo meeting every hour, so you can see a Meetbell reminder fly in.
+LOCATION:Online
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

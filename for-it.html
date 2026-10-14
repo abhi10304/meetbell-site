@@ -17,7 +17,7 @@
 
       <main class="doc">
         <h1>Meetbell for IT administrators</h1>
-        <p class="muted"><em>Last updated: 14 October 2026</em></p>
+        <p class="muted"><em>Last updated: 15 October 2026</em></p>
 
         <p>
           Someone at your organisation asked to use <strong>Meetbell</strong>, a free desktop app for Windows (Microsoft
@@ -55,12 +55,19 @@
         <h2>How to approve</h2>
         <ol>
           <li>Open the approval link the person sent you, or
-            <a href="https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id=9e4ab8f9-7769-43dc-a076-ad5f9fe0ccc5&amp;scope=https%3A%2F%2Fgraph.microsoft.com%2FCalendars.Read%20https%3A%2F%2Fgraph.microsoft.com%2FUser.Read&amp;redirect_uri=https%3A%2F%2Fabhi10304.github.io%2Fmeetbell-site%2Fapproved.html&amp;state=meetbell">this one</a>.
+            <a href="https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id=9e4ab8f9-7769-43dc-a076-ad5f9fe0ccc5&amp;scope=openid%20profile%20email%20https%3A%2F%2Fgraph.microsoft.com%2FCalendars.Read&amp;redirect_uri=https%3A%2F%2Fabhi10304.github.io%2Fmeetbell-site%2Fapproved.html&amp;state=meetbell">this one</a>.
           </li>
           <li>Sign in as a Global Administrator, Cloud Application Administrator or Application Administrator.</li>
-          <li>Check the permissions and select <strong>Accept</strong>. The approval link names Calendars.Read and User.Read
-            (Microsoft's "Sign in and read user profile"); Meetbell never calls the profile API itself.</li>
+          <li>Check the permissions and select <strong>Accept</strong>. The approval link asks for exactly what the app's
+            sign-in asks for, by name (not <code>/.default</code>): Calendars.Read, with openid, profile and email.
+            offline_access needs no administrator: Microsoft grants it with any delegated permission. There is no
+            User.Read: the app takes the person's name and address from the sign-in itself and never calls the profile API.</li>
         </ol>
+        <p>
+          If your tenant uses the <strong>admin consent workflow</strong>, people can press "Request approval" on
+          Microsoft's sign-in page instead; the request arrives under Microsoft Entra admin center › Enterprise
+          applications › Admin consent requests, and approving it there is the same approval.
+        </p>
         <p>
           Application (client) ID: <code>9e4ab8f9-7769-43dc-a076-ad5f9fe0ccc5</code>. You can also review it under
           Microsoft Entra admin center › Enterprise applications once anyone has tried to sign in.
@@ -72,10 +79,19 @@
           "Enabled for users to sign in?" to No). People can also sign out inside Meetbell, which deletes their tokens.
         </p>
 
+        <h2>Conditional Access</h2>
+        <p>
+          Meetbell's sign-in is an ordinary Microsoft sign-in in the system browser, so your Conditional Access policies
+          apply as they are. Where only managed or compliant devices may sign in, Meetbell tells people that in plain
+          words (from Microsoft's error codes AADSTS53000 to 53003) and points them to classic Outlook on a company PC, or
+          to you; it never tries to work around a policy.
+        </p>
+
         <h2>Without approval</h2>
         <p>
-          On Windows, Meetbell can read classic Outlook on the same PC with no sign-in, and anyone can add a published
-          calendar (.ics) link instead.
+          On Windows, Meetbell can read classic Outlook on the same PC with no sign-in. For work calendars it doesn't
+          suggest publishing a calendar link: a published link is an address anyone can open, with the meetings' join
+          links in it, so it's offered only behind "Other ways", with a note to check with you first.
         </p>
 
         <h2>Contact</h2>

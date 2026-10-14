@@ -13,6 +13,7 @@ SUMMARY:Meetbell demo meeting
 LOCATION:https://meet.jit.si/MeetbellDemoFlight
 DESCRIPTION:A 10-minute demo meeting every quarter hour\, so you can see a 
  Meetbell reminder fly in. Join: https://meet.jit.si/MeetbellDemoFlight
+  (the Jitsi page may ask for a host\; Join opening it is the point)
 TRANSP:OPAQUE
 END:VEVENT
 END:VCALENDAR

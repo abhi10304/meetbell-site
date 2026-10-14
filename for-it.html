@@ -17,13 +17,13 @@
 
       <main class="doc">
         <h1>Meetbell for IT administrators</h1>
-        <p class="muted"><em>Last updated: 9 October 2026</em></p>
+        <p class="muted"><em>Last updated: 14 October 2026</em></p>
 
         <p>
-          Someone at your organisation asked to use <strong>Meetbell</strong>, a free desktop app (Microsoft Store and
-          Mac App Store) that flies a small animated reminder across the screen before each meeting, with a button to
-          join it. To read their calendar it signs in with Microsoft, and your tenant asks an administrator to approve
-          that once. One approval covers everyone in your organisation.
+          Someone at your organisation asked to use <strong>Meetbell</strong>, a free desktop app for Windows (Microsoft
+          Store; a Mac version is on its way) that flies a small animated reminder across the screen before each meeting,
+          with a button to join it. To read their calendar it signs in with Microsoft, and your tenant asks an
+          administrator to approve that once. One approval covers everyone in your organisation.
         </p>
 
         <h2>What it asks for</h2>
@@ -33,9 +33,9 @@
               <tr><th>Permission</th><th>Type</th><th>Why</th></tr>
             </thead>
             <tbody>
-              <tr><td>Calendars.Read (Microsoft Graph)</td><td>Delegated</td><td>Read the signed-in person's own upcoming meetings: title, time, organizer, attendees, location and join link.</td></tr>
-              <tr><td>User.Read (Microsoft Graph)</td><td>Delegated</td><td>Show which account is connected.</td></tr>
-              <tr><td>openid, profile, email, offline_access</td><td>Delegated</td><td>Sign in, and keep the connection without asking again.</td></tr>
+              <tr><td>Calendars.Read (Microsoft Graph)</td><td>Delegated</td><td>Read the signed-in person's own upcoming meetings (title, time, organizer, attendees, location and join link) and the list of their calendars, to choose which ones get reminders.</td></tr>
+              <tr><td>openid, profile, email</td><td>Delegated</td><td>Sign in, and show which account is connected (its name and address, kept on that computer).</td></tr>
+              <tr><td>offline_access</td><td>Delegated</td><td>Keep the connection without asking the person to sign in again.</td></tr>
             </tbody>
           </table>
         </div>
@@ -58,7 +58,8 @@
             <a href="https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id=9e4ab8f9-7769-43dc-a076-ad5f9fe0ccc5&amp;scope=https%3A%2F%2Fgraph.microsoft.com%2FCalendars.Read%20https%3A%2F%2Fgraph.microsoft.com%2FUser.Read&amp;redirect_uri=https%3A%2F%2Fabhi10304.github.io%2Fmeetbell-site%2Fapproved.html&amp;state=meetbell">this one</a>.
           </li>
           <li>Sign in as a Global Administrator, Cloud Application Administrator or Application Administrator.</li>
-          <li>Check the permissions listed above and select <strong>Accept</strong>.</li>
+          <li>Check the permissions and select <strong>Accept</strong>. The approval link names Calendars.Read and User.Read
+            (Microsoft's "Sign in and read user profile"); Meetbell never calls the profile API itself.</li>
         </ol>
         <p>
           Application (client) ID: <code>9e4ab8f9-7769-43dc-a076-ad5f9fe0ccc5</code>. You can also review it under
@@ -83,9 +84,10 @@
 
       <footer>
         <div class="row">
-          <span>© 2026 Abhishek Johri · Made with <span class="heart">♥</span> by Abhishek Johri</span>
+          <span>Made with <span class="heart">♥</span> by Abhishek Johri</span>
           <span><a href="./">Meetbell</a></span>
         </div>
+        <p>© 2026 Abhishek Johri. Teams, Outlook, Microsoft 365, Zoom, Google Meet, Google Calendar, Webex, Slack, iCloud and other names are trademarks of their owners; Meetbell is not affiliated with them.</p>
       </footer>
     </div>
   </body>

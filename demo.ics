@@ -4,14 +4,15 @@ PRODID:-//Meetbell//Demo calendar//EN
 CALSCALE:GREGORIAN
 X-WR-CALNAME:Meetbell demo
 BEGIN:VEVENT
-UID:meetbell-demo-hourly@abhi10304.github.io
-DTSTAMP:20261013T000000Z
-DTSTART:20261001T003000Z
-DTEND:20261001T010000Z
-RRULE:FREQ=HOURLY
+UID:meetbell-demo-quarter@abhi10304.github.io
+DTSTAMP:20261014T000000Z
+DTSTART:20261001T000000Z
+DTEND:20261001T001000Z
+RRULE:FREQ=HOURLY;BYMINUTE=0,15,30,45
 SUMMARY:Meetbell demo meeting
-DESCRIPTION:A demo meeting every hour, so you can see a Meetbell reminder fly in.
-LOCATION:Online
+LOCATION:https://meet.jit.si/MeetbellDemoFlight
+DESCRIPTION:A 10-minute demo meeting every quarter hour\, so you can see a 
+ Meetbell reminder fly in. Join: https://meet.jit.si/MeetbellDemoFlight
 TRANSP:OPAQUE
 END:VEVENT
 END:VCALENDAR

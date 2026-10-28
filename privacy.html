@@ -28,7 +28,7 @@
 
       <main class="doc">
         <h1>Privacy policy</h1>
-        <p class="muted"><em>Last updated: 25 October 2026</em></p>
+        <p class="muted"><em>Last updated: 28 October 2026</em></p>
         <p>Meetbell is a desktop app that reminds you of your meetings. It is built so that <strong>nothing about you leaves your computer except what is needed to show your calendar and the weather</strong>, and none of it reaches us: the app has no servers, no accounts, no analytics and no advertising. Meetbell is made by Abhishek Johri, an independent developer in India.</p>
 
         <h2>What the app reads, and where it goes</h2>
@@ -137,7 +137,21 @@
         <p>When a reminder can't be shown as a plane (your screen is locked, you're away, or the plane couldn't fly), the app may also show it as a system notification. On the lock screen, and while you're away, that notification says "Meeting" instead of the meeting's title.</p>
 
         <h2>Google user data</h2>
-        <p>Meetbell's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Google Calendar data is used only on your computer: to show your reminders, the widget, your boarding pass and landing report, and to address a “running late” message that you choose to send. It is not stored on any server, not used for advertising, not sold, not used to train AI models, and not read by people.</p>
+        <p>Meetbell's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Google Calendar data is used only on your computer: to show your reminders, the widget, your boarding pass and landing report, and to address a “running late” message that you choose to send. It is not stored on any server, not used for advertising, not sold, not used to train AI models, and not read by people. It is protected as described in <a href="#protection">How your data is protected</a>.</p>
+
+        <h2 id="protection">How your data is protected</h2>
+        <p>Meetbell treats your calendar events, sign-in tokens, app passwords and calendar links as sensitive data, including all Google user data, and protects them with these mechanisms:</p>
+        <ul>
+          <li><strong>No servers, no copies with us.</strong> Your data is processed only on your computer. Meetbell has no servers or database, so the developer never receives, stores or has access to your calendar, sign-ins or passwords.</li>
+          <li><strong>Encrypted in transit.</strong> Everything Meetbell reads from Google, Microsoft, iCloud and other calendar servers travels over encrypted HTTPS (TLS) connections, directly between your computer and that service. Calendar links that start with http:// or webcal:// are changed to https://. An app password is sent only to its own calendar server over HTTPS, and never passed on when a server redirects elsewhere.</li>
+          <li><strong>Encrypted at rest.</strong> Sign-in tokens and app passwords are stored encrypted with your operating system's key store: Windows Data Protection (DPAPI), tied to your Windows account, or the macOS Keychain. They are never saved unencrypted: if that encryption isn't available, Meetbell doesn't save them. Calendar links are encrypted the same way wherever the key store is available.</li>
+          <li><strong>Least access.</strong> Meetbell asks Google only for your name and e-mail address and for read-only access to your calendar events and list of calendars (<code>calendar.events.readonly</code> and <code>calendar.calendarlist.readonly</code>), and Microsoft only for read-only calendar access (<code>Calendars.Read</code>). It can't change, send or delete anything. If you untick calendar access on Google's consent page, Meetbell gives the sign-in back to Google at once.</li>
+          <li><strong>Secure sign-in.</strong> You sign in on Google's or Microsoft's own page in your browser (OAuth 2.0 with PKCE), so Meetbell never sees your Google or Microsoft password.</li>
+          <li><strong>Kept briefly, on your computer only.</strong> Meeting details are kept only in the app's folder in your own user profile, protected by your operating system's account permissions: the last meetings read from each calendar for 24 hours at most, today's meeting titles until the next day, and a series you mute keeps its title until you unmute it. Disconnecting a calendar deletes its tokens or app password, revokes the tokens where the provider supports it, and removes its meetings from the cache.</li>
+          <li><strong>An isolated app.</strong> Meetbell's windows run in Chromium's sandbox with a strict content security policy. They show only Meetbell's own pages and can't send anything to the internet themselves.</li>
+          <li><strong>Nothing sensitive in logs.</strong> Calendar links, e-mail addresses, tokens and passwords are removed before anything is written to the app's log, and meeting titles are never written. Nothing is uploaded.</li>
+          <li><strong>No human access.</strong> No person, including the developer, reads your Google user data. It is never sold, shared, or used for advertising or to train AI models.</li>
+        </ul>
 
         <h2>What the app does not do</h2>
         <ul>
